@@ -1,16 +1,19 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projeto CTW+</title>
-    </head>
-    <body>
-        <header>
-            <li><a href="../index.html">Tela Inicial</a></li>
-        </header>
-        <main>
-            <h1>Salvar Alunos</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+</head>
+<body>
+    <header>
+        <li><a href="../index.html">Tela Inicial</a></li>
+        <h1>Modificar Pesquisando Alunos por ID</h1>
+        <input id="id-alvo" placeholder="ID do aluno">
+        <button onclick="modificarAunos()">Procurar</button>
+        <ul id="feedback"></ul>
+        <div id="modificar-aluno" style="display: none;">
+            <h1>Modificar Aluno: </h1>
             <div class="cad-container">
                 <input class="cad-input" id="nome-aluno" type="text" placeholder="Nome do aluno">
             </div>
@@ -29,9 +32,11 @@
             <div class="cad-container">
                 <input class="cad-input" id="senha-aluno" type="text" placeholder="Senha do aluno (deixe vazio para '1234' automático)">
             </div>
-            <button onclick="salvarAlunos(false)">Salvar</button>
+            <button onclick="salvarAlunos(true)">Salvar</button>
             <ul id="feedback-message"></ul>
-        </main>
-        <script src="./alunosCRUD.js"></script>
-    </body>
-    </html>
+        </div>
+    </header>
+    <main></main>
+    <script src="./alunosCRUD.js"></script>
+</body>
+</html>

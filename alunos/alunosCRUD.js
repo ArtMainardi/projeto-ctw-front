@@ -32,6 +32,7 @@ async function listarAlunos(){
     listaHTML.innerHTML = listaGerada;
 }
 
+// --------------------------------
 async function procurarAlunos(){
     const feedback = document.getElementById("aluno");
     feedback.innerHTML = "Procurando...";
@@ -64,9 +65,12 @@ async function procurarAlunos(){
     `;
 }
 
-async function salvarAlunos(){
+// --------------------------------
+async function salvarAlunos(modificar){
     const mensagem = document.getElementById("feedback-message");
     mensagem.innerHTML = "Salvando...";
+    let metodoFetch = 'POST';
+    let modificarURL = "";
 
     // Criando objeto do aluno:
     const novoAluno = {
@@ -76,11 +80,16 @@ async function salvarAlunos(){
         cpf_aluno: document.getElementById("cpf-aluno").value,
         email_aluno: document.getElementById("email-aluno").value,
         senha_aluno: document.getElementById("senha-aluno").value
+    };
+    if(modificar){
+        novoAluno.id_aluno = document.getElementById("id-alvo").value;
+        metodoFetch = 'PUT';
+        modificarURL = `/${novoAluno.id_aluno}`;
     }
 
     // Enviando aluno para a API:
-    const API = await fetch('http://localhost:8055/alunos', {
-        method: 'POST',
+    const API = await fetch(`http://localhost:8055/alunos${modificarURL}`, {
+        method: `${metodoFetch}`,
         headers: {
             'Content-Type': 'application/json' // Avisa o Spring que estamos enviando um JSON
         },
@@ -96,6 +105,36 @@ async function salvarAlunos(){
     }
 }
 
+// --------------------------------
+async function modificarAunos(){
+    const mensagem = document.getElementById("feedback");
+    mensagem.innerHTML = "Procurando...";
+
+    const idAluno = document.getElementById("id-alvo").value;
+
+    // Procurando Aluno:
+    const API = await fetch(`http://localhost:8055/alunos/${idAluno}`, {
+        method: 'GET'
+    });
+    mensagem.innerHTML = "";
+
+    if(API.ok){
+        const aluno = await API.json();
+
+        document.getElementById("nome-aluno").value = aluno.nome_aluno;
+        document.getElementById("matricula-aluno").value = aluno.matricula_aluno;
+        document.getElementById("nascimento-aluno").value = aluno.data_nascimento_aluno;
+        document.getElementById("cpf-aluno").value = aluno.cpf_aluno;
+        document.getElementById("email-aluno").value = aluno.email_aluno;
+
+        document.getElementById("modificar-aluno").style = "display: blok";
+    } else{
+        mensagem.innerHTML = "Aluno com esse ID não encontrado!";
+        return;
+    }
+}
+
+// --------------------------------
 async function deletarAlunos(){
     const mensagem = document.getElementById("feedback-message");
     mensagem.innerHTML = "Deletando...";
