@@ -6,7 +6,6 @@ async function listarAlunos(){
         method: 'GET'
     });
     const alunos = await resposta.json();
-    console.log("Dados recebidos: \n\n" + alunos);
     listaHTML.innerHTML = "";
 
     // Verificar se a listaHTML não está vazia:
@@ -29,4 +28,36 @@ async function listarAlunos(){
         `;
     });
     listaHTML.innerHTML = listaGerada;
+}
+
+async function salvarAlunos(){
+    const mensagem = document.getElementById("feedback-message");
+    mensagem.innerHTML = "Salvando...";
+
+    // Criando objeto do aluno:
+    const novoAluno = {
+        nome_aluno: document.getElementById("nome-aluno").value,
+        matricula_aluno: document.getElementById("matricula-aluno").value,
+        data_nascimento_aluno: document.getElementById("nascimento-aluno").value,
+        cpf_aluno: document.getElementById("cpf-aluno").value,
+        email_aluno: document.getElementById("email-aluno").value,
+        senha_aluno: document.getElementById("senha-aluno").value
+    }
+
+    // Enviando aluno para a API:
+    const API = await fetch('http://localhost:8055/alunos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Avisa o Spring que estamos enviando um JSON
+        },
+        body: JSON.stringify(novoAluno)
+    });
+
+    // Verificar ação e mostrar feedback:
+    if(API.ok){
+        const aluno = await API.json();
+        mensagem.innerHTML = "Aluno salvo!";
+    } else{
+        mensagem.innerHTML = "Erro ao salvar o aluno!";
+    }
 }
