@@ -10,7 +10,8 @@ async function listarAlunos(){
 
     // Verificar se a listaHTML não está vazia:
     if(alunos.length == 0){
-        listaHTML.innerHTML = "<li>listaHTML vazia: nenhum aluno encontrado.</li>"
+        listaHTML.innerHTML = "<li>Lista vazia: nenhum aluno encontrado.</li>"
+        return;
     }
 
     // Criando a listaHTML:
@@ -59,5 +60,23 @@ async function salvarAlunos(){
         mensagem.innerHTML = "Aluno salvo!";
     } else{
         mensagem.innerHTML = "Erro ao salvar o aluno!";
+    }
+}
+
+async function deletarAlunos(){
+    const mensagem = document.getElementById("feedback-message");
+    mensagem.innerHTML = "Deletando...";
+
+    // Enviando id_aluno para a API:
+    const idAluno = document.getElementById("id-aluno").value;
+    const API = await fetch(`http://localhost:8055/alunos/${idAluno}`, {
+        method: 'DELETE'
+    });
+
+    // Verificar ação e mostrar feedback:
+    if(API.ok){
+        mensagem.innerHTML = "Aluno apagado!";
+    } else{
+        mensagem.innerHTML = "Erro ao apagar o aluno!";
     }
 }
