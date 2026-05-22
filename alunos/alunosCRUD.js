@@ -10,7 +10,7 @@ async function listarAlunos(){
 
     // Verificar se a listaHTML não está vazia:
     if(alunos.length == 0){
-        listaHTML.innerHTML = "<li>Lista vazia: nenhum aluno encontrado.</li>"
+        listaHTML.innerHTML = "<li>Lista vazia: nenhum aluno encontrado.</li>";
         return;
     }
 
@@ -25,10 +25,43 @@ async function listarAlunos(){
                 <strong>Data de nascimento:</strong> ${aluno.data_nascimento_aluno} | 
                 <strong>CPF:</strong> ${aluno.cpf_aluno} | 
                 <strong>Email:</strong> ${aluno.email_aluno} |
+                <strong>Data de criação:</strong> ${aluno.data_criacao_aluno} |
             </li>
         `;
     });
     listaHTML.innerHTML = listaGerada;
+}
+
+async function procurarAlunos(){
+    const feedback = document.getElementById("aluno");
+    feedback.innerHTML = "Procurando...";
+
+    // Procurar aluno pelo ID:
+    const id = document.getElementById("id-aluno").value;
+    const API = await fetch(`http://localhost:8055/alunos/${id}`, {
+        method: 'GET'
+    });
+    const procura = await API.json();
+    feedback.innerHTML = "";
+
+    // Verificar se a procura não está vazia:
+    if(procura.length == 0 || !API.ok){
+        feedback.innerHTML = "<li>Nenhum aluno com esse ID foi encontrado.</li>";
+        return;
+    }
+
+    // Mostrando o aluno pesquisado:
+    feedback.innerHTML = `
+        <li>
+            <strong>| ID:</strong> ${procura.id_aluno} | 
+            <strong>Nome:</strong> ${procura.nome_aluno} | 
+            <strong>Matrícula:</strong> ${procura.matricula_aluno} | 
+            <strong>Data de nascimento:</strong> ${procura.data_nascimento_aluno} | 
+            <strong>CPF:</strong> ${procura.cpf_aluno} | 
+            <strong>Email:</strong> ${procura.email_aluno} |
+            <strong>Data de criação:</strong> ${procura.data_criacao_aluno} |
+        </li>
+    `;
 }
 
 async function salvarAlunos(){
