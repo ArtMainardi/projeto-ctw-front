@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto CTW+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+    <div class="bolas">
+        <div class="bola" id="bola1"></div>
+        <div class="bola" id="bola2"></div>
+        <div class="bola" id="bola3"></div>
+        <div class="bola" id="bola4"></div>
+    </div>
+
+    <div class="container-barras-laterais"> 
+        <img src="images/efeito-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral1">
+        <img src="images/efeito-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral2">
+    </div>
+
     <header>
     </header>
     
     <main>
-        <h1>Login</h1>
-        <input id="email" type="text" placeholder="Digite seu email">
-        <input id="senha" type="text" placeholder="Digite sua senha">
-        <button onclick="logar()">Entrar</button>
-        <ul id="feedback-message"></ul>
+        <img src="images/logo-ctw+.svg" alt="ctw+ logo" class="logo-ctw">
+        <div class="bolha">
+            <h1 class="titulo">Entrar</h1>
+            <label for="email" style="font-family: fontM; margin-left: 2px;">Email:</label>
+            <input id="email" type="text" placeholder="nome@gmail.com" class="campo">
+            <label for="senha" style="font-family: fontM; margin-left: 2px;">Senha:</label>
+            <input id="senha" type="password" placeholder="*********" class="campo">
+            <button onclick="logar()" class="botao">Entrar</button>
+        </div>
+        <ul id="feedback-message" class="texto"></ul>
     </main>
 
     <script src="/index-script.js"></script>
