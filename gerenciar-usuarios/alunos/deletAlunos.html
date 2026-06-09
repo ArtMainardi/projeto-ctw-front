@@ -7,9 +7,14 @@
 </head>
 <body>
     <header>
-        <li><a href="../tela-inicial/telaInicial.html">Tela Inicial</a></li>
+        <li><a href="../alunos/alunos.html">Voltar</a></li>
     </header>
-    <main>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+
+    <main id="main" style="display: none;">
         <h1>Deletar Alunos Cadastrados</h1>
         <div class="cad-container">
             <input class="cad-input" id="id-aluno" type="text" placeholder="ID do aluno a ser deletado">
@@ -17,6 +22,7 @@
         <button onclick="deletarAlunos()">Apagar</button>
         <ul id="feedback-message"></ul>
     </main>
+
     <script src="./alunosCRUD.js"></script>
 </body>
 </html>

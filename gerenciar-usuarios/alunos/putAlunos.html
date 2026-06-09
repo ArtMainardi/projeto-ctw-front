@@ -7,7 +7,14 @@
 </head>
 <body>
     <header>
-        <li><a href="../tela-inicial/telaInicial.html">Tela Inicial</a></li>
+        <li><a href="../alunos/alunos.html">Voltar</a></li>
+    </header>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+    
+    <main id="main" style="display: none;">
         <h1>Modificar Pesquisando Alunos por ID</h1>
         <input id="id-alvo" placeholder="ID do aluno">
         <button onclick="modificarAunos()">Procurar</button>
@@ -35,8 +42,8 @@
             <button onclick="salvarAlunos(true)">Salvar</button>
             <ul id="feedback-message"></ul>
         </div>
-    </header>
-    <main></main>
+    </main>
+    
     <script src="./alunosCRUD.js"></script>
 </body>
 </html>
