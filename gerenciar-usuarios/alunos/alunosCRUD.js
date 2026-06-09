@@ -111,7 +111,7 @@ async function procurarAlunos(){
 
 // --------------------------------
 async function salvarAlunos(modificar){
-    const mensagem = document.getElementById("feedback-message");
+    const mensagem = document.getElementById("feedback");
     mensagem.innerHTML = "Salvando...";
     let metodoFetch = 'POST';
     let modificarURL = "";
@@ -151,7 +151,7 @@ async function salvarAlunos(modificar){
 
 // --------------------------------
 async function modificarAunos(){
-    const mensagem = document.getElementById("feedback");
+    const mensagem = document.getElementById("search-feedback");
     mensagem.innerHTML = "Procurando...";
 
     const idAluno = document.getElementById("id-alvo").value;
@@ -171,7 +171,7 @@ async function modificarAunos(){
         document.getElementById("cpf-aluno").value = aluno.cpf_aluno;
         document.getElementById("email-aluno").value = aluno.email_aluno;
 
-        document.getElementById("modificar-aluno").style = "display: blok";
+        document.getElementById("modificar-aluno").style.display = "block";
     } else{
         mensagem.innerHTML = "Aluno com esse ID não encontrado!";
         return;
@@ -180,7 +180,7 @@ async function modificarAunos(){
 
 // --------------------------------
 async function deletarAlunos(){
-    const mensagem = document.getElementById("feedback-message");
+    const mensagem = document.getElementById("feedback");
     mensagem.innerHTML = "Deletando...";
 
     // Enviando id_aluno para a API:

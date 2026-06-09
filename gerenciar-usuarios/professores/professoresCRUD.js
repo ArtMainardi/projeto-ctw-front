@@ -115,7 +115,7 @@ async function procurarProfessores(){
 
 // --------------------------------
 async function salvarProfessores(modificar){
-    const mensagem = document.getElementById("feedback-message");
+    const mensagem = document.getElementById("feedback");
     mensagem.innerHTML = "Salvando...";
     let metodoFetch = 'POST';
     let modificarURL = "";
@@ -152,5 +152,56 @@ async function salvarProfessores(modificar){
         mensagem.innerHTML = "Professor salvo!";
     } else{
         mensagem.innerHTML = "Erro ao salvar o professor!";
+    }
+}
+
+// --------------------------------
+async function modificarProfessores(){
+    const mensagem = document.getElementById("search-feedback");
+    mensagem.innerHTML = "Procurando...";
+
+    const idProfessor = document.getElementById("id-alvo").value;
+
+    // Procurando Aluno:
+    const API = await fetch(`http://localhost:8055/professor/${idProfessor}`, {
+        method: 'GET'
+    });
+    mensagem.innerHTML = "";
+
+    if(API.ok){
+        const professor = await API.json();
+
+        document.getElementById("nome-professor").value = professor.nome_professor;
+        document.getElementById("cadastro-professor").value = professor.cadastro_professor;
+        document.getElementById("nascimento-professor").value = professor.data_nascimento_professor;
+        document.getElementById("cpf-professor").value = professor.cpf_professor;
+        document.getElementById("especialidade-professor").value = professor.especialidade_professor;
+        document.getElementById("email-professor").value = professor.email_professor;
+        document.getElementById("senha-professor").value = professor.senha_professor;
+        document.getElementById("adm").value = professor.adm;
+
+        document.getElementById("modificar-professor").style.display = "block";
+    } else{
+        mensagem.innerHTML = "Professor com esse ID não encontrado!";
+        return;
+    }
+}
+
+// --------------------------------
+async function deletarProfessores(){
+    const mensagem = document.getElementById("feedback");
+    mensagem.innerHTML = "Deletando...";
+
+    // Enviando id_aluno para a API:
+    const idProfessor = document.getElementById("id-professor").value;
+    const API = await fetch(`http://localhost:8055/professor/${idProfessor}`, {
+        method: 'DELETE'
+    });
+
+    // Verificar ação e mostrar feedback:
+    if(API.ok){
+        mensagem.innerHTML = "Professor apagado!";
+    } else{
+        mensagem.innerHTML = "Erro ao apagar o professor!";
     }
 }
