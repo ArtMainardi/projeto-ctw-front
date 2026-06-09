@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+:root{
+    --corM: #00569D;
+    --corBolha: #D9D9D9;
+    --corCampo: #AEAEAE;
+    --corBotaoOFF: #929292;
+    --corBotaoON: #757575;
+}
+
+@font-face{
+    src: url(fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-family: "fontM";
+}
+
+.bolha{
+    border-radius: 34px;
+    padding: 10px 25px;
+    background-color: var(--corBolha);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    font-family: fontM;
+    margin: 2px;
+}
+
+.campo{
+    font-family: fontM;
+    padding: 1% 5%;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--corCampo);
+    margin: 2px;
+}
+
+.botao{
+    font-family: fontM;
+    border: none;
+    padding: 1% 5%;
+    border-radius: 34px;
+    text-align: center;
+    background-color: var(--corBotaoOFF);
+    margin: 2px;
+    height: 30px;
+}
+
+.botao:hover{
+    font-weight: bold;
+    background-color: var(--corBotaoON);
+}
+
+.botao:active{
+    font-weight: bold;
+    border: 2px inset var(--corBotaoOFF);
+    font-size: 0.8em;
+}
+
+.texto{
+    font-family: fontM;
+    text-align: center;
+    padding: 0;
+}
+
+.logo-ctw{
+    zoom: 55%;
+    margin: 20px;
+}
+
+.bola{
+    background-color: var(--corM);
+    border-radius: 50%;
+    opacity: 50%;
+}
+
