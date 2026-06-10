@@ -3,7 +3,7 @@ const usuarioId = localStorage.getItem("usuarioId");
 const tipoUsuario = localStorage.getItem("tipoUsuario");
 
 // Verificando usuário salvo para então mostrar a página:
-window.onload = async function userVerification(){
+window.addEventListener("load", async function() {
     const main = document.getElementById("main");
     const errorMain = document.getElementById("error-main");
     const feedback = document.getElementById("feedback-message");
@@ -45,4 +45,4 @@ window.onload = async function userVerification(){
     } else{ // Mostrando erro se não encontrar o usuário:
         feedback.innerHTML = "ERRO: usuário não encontrado!";
     }
-}
+});
