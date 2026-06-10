@@ -7,9 +7,6 @@ window.onload = async function userVerification(){
     const main = document.getElementById("main");
     const errorMain = document.getElementById("error-main");
     const feedback = document.getElementById("feedback-message");
-
-    const urlAtual = window.location.href;
-    console.log(urlAtual);
     
     feedback.innerHTML = "Carregando...";
 
@@ -36,8 +33,12 @@ window.onload = async function userVerification(){
         });
 
         if(API.ok){
-            main.style.display = "block";
-            errorMain.style.display = "none";
+            if(window.location.pathname.includes("/gerenciar-usuarios/")){
+                feedback.innerHTML = "ERRO: esse usuário não tem permissão para acessar essa página!";
+            } else{
+                main.style.display = "block";
+                errorMain.style.display = "none";
+            }
         } else{ // Mostrando erro se não encontrar o usuário:
             feedback.innerHTML = "ERRO: usuário não encontrado!";
         }
