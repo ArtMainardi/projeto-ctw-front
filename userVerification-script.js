@@ -42,5 +42,7 @@ window.onload = async function userVerification(){
         } else{ // Mostrando erro se não encontrar o usuário:
             feedback.innerHTML = "ERRO: usuário não encontrado!";
         }
+    } else{ // Mostrando erro se não encontrar o usuário:
+        feedback.innerHTML = "ERRO: usuário não encontrado!";
     }
 }
