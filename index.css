@@ -13,40 +13,8 @@ main{
     width: 400px;
 }
 
-.bolas div{
-    position: fixed;
-}
-
 .botao{
     margin-top: 5%;
-}
-
-#bola1{
-    height: 100px;
-    width: 100px;
-    top: 45px;
-    left: 400px;
-}
-
-#bola2{
-    height: 800px;
-    width: 800px;
-    top: 450px;
-    left: -250px;
-}
-
-#bola3{
-    height: 200px;
-    width: 200px;
-    top: -65px;
-    left: 1300px;
-}
-
-#bola4{
-    height: 700px;
-    width: 700px;
-    top: 350px;
-    left: 1400px;
 }
 
 #barra-lateral1 {
