@@ -3,7 +3,7 @@ async function listarAlunos(){
     const listaHTML = document.getElementById("lista-alunos");
     listaHTML.innerHTML = "Carregando...";
 
-    const resposta = await fetch('http://localhost:8055/alunos', {
+    const resposta = await fetch('http://localhost:8055/aluno', {
         method: 'GET'
     });
     const alunos = await resposta.json();
@@ -40,7 +40,7 @@ async function procurarAlunos(){
 
     // Procurar aluno pelo ID:
     const id = document.getElementById("id-aluno").value;
-    const API = await fetch(`http://localhost:8055/alunos/${id}`, {
+    const API = await fetch(`http://localhost:8055/aluno/${id}`, {
         method: 'GET'
     });
     const procura = await API.json();
@@ -89,7 +89,7 @@ async function salvarAlunos(modificar){
     }
 
     // Enviando aluno para a API:
-    const API = await fetch(`http://localhost:8055/alunos${modificarURL}`, {
+    const API = await fetch(`http://localhost:8055/aluno${modificarURL}`, {
         method: `${metodoFetch}`,
         headers: {
             'Content-Type': 'application/json' // Avisa o Spring que estamos enviando um JSON
@@ -114,7 +114,7 @@ async function modificarAunos(){
     const idAluno = document.getElementById("id-alvo").value;
 
     // Procurando Aluno:
-    const API = await fetch(`http://localhost:8055/alunos/${idAluno}`, {
+    const API = await fetch(`http://localhost:8055/aluno/${idAluno}`, {
         method: 'GET'
     });
     mensagem.innerHTML = "";
@@ -142,7 +142,7 @@ async function deletarAlunos(){
 
     // Enviando id_aluno para a API:
     const idAluno = document.getElementById("id-aluno").value;
-    const API = await fetch(`http://localhost:8055/alunos/${idAluno}`, {
+    const API = await fetch(`http://localhost:8055/aluno/${idAluno}`, {
         method: 'DELETE'
     });
 

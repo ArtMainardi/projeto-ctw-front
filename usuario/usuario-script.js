@@ -1,5 +1,4 @@
 window.addEventListener("load", async function() {
-    console.log("AAAA");
     // Definindo as variáveis dos elementos do HTML:
     const nome = document.getElementById("nome-usuario");
     const cpf = document.getElementById("cpf-usuario");
