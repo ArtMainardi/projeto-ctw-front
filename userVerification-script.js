@@ -33,7 +33,7 @@ window.addEventListener("load", async function() {
         });
 
         if(API.ok){
-            if(window.location.pathname.includes("/gerenciar-usuarios/")){
+            if(window.location.pathname.includes("/gerenciar")){
                 feedback.innerHTML = "ERRO: esse usuário não tem permissão para acessar essa página!";
             } else{
                 main.style.display = "block";
