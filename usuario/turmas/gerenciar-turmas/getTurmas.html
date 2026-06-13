@@ -6,19 +6,19 @@
     <title>Projeto CTW+</title>
 </head>
 <body>
+    <header>
+        <li><a href="./gerenciarTurmas.html">Voltar</a></li>
+    </header>
+
     <main id="error-main">
         <p id="feedback-message"></p>
     </main>
 
     <main id="main" style="display: none;">
-        <li><a href="../turmas.html">Voltar</a></li>
-        <h1>Gerenciar Turmas</h1>
-
-        <li><a href="./getTurmas.html">Listar Turmas</a></li>
-        <li><a href="./getTurmasID.html">Pesquisar Turma</a></li>
-        <li><a href="./postTurmas.html">Cadastrar Turma</a></li>
+        <h1>Lista de Turmas Cadastrados</h1>
+        <button onclick="listarTurmas()">Listar Turmas</button>
+        <ul id="lista-turmas"></ul>
     </main>
-
     <script src="./turmas-script.js"></script>
     <script src="../../../userVerification-script.js"></script>
 </body>
