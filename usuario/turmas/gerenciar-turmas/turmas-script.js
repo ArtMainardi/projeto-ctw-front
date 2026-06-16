@@ -58,7 +58,7 @@ async function procurarTurmas(){
 }
 
 // --------------------------------
-async function salvarProfessores(modificar){
+async function salvarTurmas(modificar){
     const mensagem = document.getElementById("feedback");
     mensagem.innerHTML = "Salvando...";
     let metodoFetch = 'POST';
@@ -92,5 +92,49 @@ async function salvarProfessores(modificar){
         mensagem.innerHTML = "Turma salva!";
     } else{
         mensagem.innerHTML = "Erro ao salvar turma!";
+    }
+}
+
+// --------------------------------
+async function modificarTurmas(){
+    const mensagem = document.getElementById("search-feedback");
+    mensagem.innerHTML = "Procurando...";
+
+    const idTurma = document.getElementById("id-alvo").value;
+
+    // Procurando Aluno:
+    const API = await fetch(`http://localhost:8055/turmas/${idTurma}`, {
+        method: 'GET'
+    });
+    mensagem.innerHTML = "";
+
+    if(API.ok){
+        const turma = await API.json();
+
+        document.getElementById("nome-turma").value = turma.nome_turma;
+        document.getElementById("periodo").value = turma.periodo;
+        document.getElementById("modificar-turma").style.display = "block";
+    } else{
+        mensagem.innerHTML = "Turma com esse ID não encontrada!";
+        return;
+    }
+}
+
+// --------------------------------
+async function deletarTurmas(){
+    const mensagem = document.getElementById("feedback");
+    mensagem.innerHTML = "Deletando...";
+
+    // Enviando id_aluno para a API:
+    const idTurma = document.getElementById("id-turma").value;
+    const API = await fetch(`http://localhost:8055/turmas/${idTurma}`, {
+        method: 'DELETE'
+    });
+
+    // Verificar ação e mostrar feedback:
+    if(API.ok){
+        mensagem.innerHTML = "Turma apagada!";
+    } else{
+        mensagem.innerHTML = "Erro ao apagar a turma!";
     }
 }

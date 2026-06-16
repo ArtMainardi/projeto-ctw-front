@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+</head>
+<body>
+    <header>
+        <li><a href="./gerenciarTurmas.html">Voltar</a></li>
+    </header>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+    
+    <main id="main" style="display: none;">
+        <h1>Modificar Pesquisando Turmas por ID</h1>
+        <input id="id-alvo" placeholder="ID da Turma">
+        <button onclick="modificarTurmas()">Procurar</button>
+        <ul id="search-feedback"></ul>
+        <div id="modificar-turma" style="display: none;">
+            <h1>Modificar Turma: </h1>
+            <div class="cad-container">
+                <input class="cad-input" id="nome-turma" type="text" placeholder="Nome da Turma">
+            </div>
+            <select id="periodo" name="Período da Turma">
+                <option value="1">Manhã</option>
+                <option value="2">Noite</option>
+            </select>
+            <button onclick="salvarTurmas(true)">Salvar</button>
+            <ul id="feedback"></ul>
+        </div>
+    </main>
+    
+    <script src="./turmas-script.js"></script>
+    <script src="../../../userVerification-script.js"></script>
+</body>
+</html>

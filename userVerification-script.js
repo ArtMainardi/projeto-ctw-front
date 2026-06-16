@@ -28,7 +28,7 @@ window.addEventListener("load", async function() {
             errorMain.style.display = "none";
         }
     } else if(tipoUsuario == "aluno"){ // Procurando na lista de alunos:
-        const API = await fetch(`http://localhost:8055/alunos/${usuarioId}`, {
+        const API = await fetch(`http://localhost:8055/aluno/${usuarioId}`, {
             method: "GET"
         });
 
