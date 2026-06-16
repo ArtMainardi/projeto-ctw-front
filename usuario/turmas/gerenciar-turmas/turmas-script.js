@@ -112,7 +112,7 @@ async function modificarTurmas(){
         const turma = await API.json();
 
         document.getElementById("nome-turma").value = turma.nome_turma;
-        document.getElementById("periodo").value = turma.periodo;
+        document.getElementById("periodo").value = turma.periodo.id_periodo;
         document.getElementById("modificar-turma").style.display = "block";
     } else{
         mensagem.innerHTML = "Turma com esse ID não encontrada!";
