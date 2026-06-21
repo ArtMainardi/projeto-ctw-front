@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    justify-self: center;
+    position: fixed;
+    height: 100%;
+    text-align: center;
+}
+
+.caixa-usuario {
+    top: 100px;
+}
+
+.caixa-usuario p{
+    background-color: var(--corCampo);
+}
+
+#barra-lateral1 {
+    top: 0;
+}
+
+#barra-lateral2 {
+    top: 0;
+}

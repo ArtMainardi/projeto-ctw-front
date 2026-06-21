@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    justify-self: center;
+    position: fixed;
+    height: 390px;
+    top: 240px;
+    text-align: center;
+}
+
+.caixa-usuario {
+    top: 100px;
+}
+
+.caixa-usuario p{
+    background-color: var(--corCampo);
+    margin: 10px;
+}
+
+#barra-lateral1 {
+    position: fixed;
+    left: 0;
+}
+
+#logo-escuro {
+    width: 15px;
+}
+
+.juncao-divs {
+    display: flex;
+}
+
+#foto-usuario {
+    
+}

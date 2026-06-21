@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    text-align: center;
+    background-color: var(--corBolha);
+    border-radius: 15px;
+}
+
+.caixa-usuario {
+    position: flex;
+    align-self: ;
+    width: 200px;
+    top: 100px;
+}
+
+.caixa-usuario p{
+    background-color: var(--corCampo);
+}
+
+#barra-lateral1 {
+    top: 0;
+}
+
+#barra-lateral2 {
+    top: 0;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+</head>
+<body>
+    <header>
+        <li><a href="../alunos/alunos.html">Voltar</a></li>
+    </header>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+
+    <main id="main" style="display: none;">
+        <h1>Lista de Alunos Cadastrados</h1>
+        <button onclick="listarAlunos()">Listar Alunos</button>
+        <ul id="lista-alunos"></ul>
+    </main>
+    <script src="./alunosCRUD.js"></script>
+    <script src="../../userVerification-script.js"></script>
+</body>
+</html>

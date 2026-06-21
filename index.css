@@ -1,0 +1,61 @@
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ctw{
+    margin-top: 15%;
+}
+
+.bolha{
+    width: 400px;
+}
+
+.bolas div{
+    position: fixed;
+}
+
+.botao{
+    margin-top: 5%;
+}
+
+#bola1{
+    height: 100px;
+    width: 100px;
+    top: 45px;
+    left: 400px;
+}
+
+#bola2{
+    height: 800px;
+    width: 800px;
+    top: 450px;
+    left: -250px;
+}
+
+#bola3{
+    height: 200px;
+    width: 200px;
+    top: -65px;
+    left: 1300px;
+}
+
+#bola4{
+    height: 700px;
+    width: 700px;
+    top: 350px;
+    left: 1400px;
+}
+
+#barra-lateral1 {
+    position: fixed;
+    left: 0;
+}
+
+#barra-lateral2 {
+    position: fixed;
+    right: 0;
+    transform: scale(-1);
+}

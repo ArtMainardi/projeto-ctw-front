@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="usuario.css">
+    <link rel="stylesheet" href="/menuLateral.css">
+</head>
+<body>
+
+    <div class="bolas">
+        <div class="bola" id="bola1"></div>
+        <div class="bola" id="bola2"></div>
+        <div class="bola" id="bola3"></div>
+        <div class="bola" id="bola4"></div>
+    </div>
+
+    <div class="container-barras-laterais"> 
+        <img src="/images/barra-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral1">
+    </div>
+
+     <div class="container-menu-lateral">
+        <img src="..\images\menu-lateral.svg" alt="Menu lateral estilo barra" id="menu-lateral">
+        <a href="javascript:intercalarMenu()">
+            <img src="..\images\mais-icon.svg" alt="mais icone" id="icone-mais"> 
+        </a>
+        <nav>
+            <a href="">
+                <h1 class="menu-text" id="text-cardapio">Cardápio</h1>
+                <img class="menu-item" id="icone-cardapio" src="..\images\cardapio-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-noticias">Notícias</h1>
+                <img class="menu-item" id="icone-noticias" src="..\images\noticias-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-rank">Ranking</h1>
+                <img class="menu-item" id="icone-rank" src="..\images\ranking-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-materia">Material Online</h1>
+                <img class="menu-item" id="icone-materia" src="..\images\materia-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-config">Ferramentas</h1>
+                <img class="menu-item" id="icone-config" src="..\images\config-icon.svg" alt="icone cardápio">
+            </a>
+        </nav>
+    </div>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+
+    <main id="main" class="bolha" style="display: none;">
+        <div class="juncao-divs">
+            <div id="foto-usuario">
+                <p>Foto do Usuário</p>
+            </div>
+
+            <div class="caixa-usuario">
+                <h1 class="titulo">Perfil do Usuário</h1>
+                <p id="nome-usuario" class="campo"></p>
+                <p id="cpf-usuario" class="campo"></p>
+                <p id="email-usuario" class="campo"></p>
+                <p id="nascimento-usuario" class="campo"></p>
+        
+                <button style="margin: 10px;" id="logout-button" onclick=logout() class="botao">Desconectar da conta</button>
+
+                <div class="menu">
+                    <a href="../gerenciar-usuarios/gerenciarUsuarios.html">
+                        <button type="button" class="botao">Gerenciar Usuários</button>
+                    </a>
+                    <br>
+                    <a href="levar-para-modo-escuro">
+                        <img src="/images/modo-escuro.png" alt="Ícone do modo escuro">
+                    </a>
+                    
+
+                </div>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <script src="./usuario-script.js"></script>
+    <script src="../userVerification-script.js"></script>
+    <script src="/menuLateral.js"></script>
+</body>
+</html>

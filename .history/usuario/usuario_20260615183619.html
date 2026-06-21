@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="usuario.css">
+</head>
+<body>
+
+    <div class="bolas">
+        <div class="bola" id="bola1"></div>
+        <div class="bola" id="bola2"></div>
+        <div class="bola" id="bola3"></div>
+        <div class="bola" id="bola4"></div>
+    </div>
+
+    <div class="container-barras-laterais"> 
+        <img src="/images/efeito-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral1">
+        <img src="/images/efeito-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral2">
+    </div>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+
+    <main id="main" style="display: none;">
+        <div>
+            
+        </div>
+        <h1>Perfil do Usuário</h1>
+        <p id="nome-usuario"></p>
+        <p id="cpf-usuario"></p>
+        <p id="email-usuario"></p>
+        <p id="nascimento-usuario"></p>
+
+        <button id="logout-button" onclick=logout()>Desconectar da conta</button>
+
+        <div class="menu">
+            <li class="adm-feature" style="display: none;"><a href="../gerenciar-usuarios/gerenciarUsuarios.html">Gerenciar Usuários</a></li>
+            <li><a href="">Materias</a></li>
+            <li><a href="../tela-inicial/telaInicial.html">Notícias</a></li>
+            <li><a href="">Cardapio</a></li>
+            <li><a href="">Ranqueamento</a></li>
+            <li><a href="">Usuário</a></li>
+        </div>
+    </main>
+
+    <script src="./usuario-script.js"></script>
+    <script src="../userVerification-script.js"></script>
+</body>
+</html>

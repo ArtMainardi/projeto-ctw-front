@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#barra-lateral1 {
+    visibility: hidden;
+}

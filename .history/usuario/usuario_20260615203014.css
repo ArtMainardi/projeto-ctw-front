@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 450px;
+    justify-self: center;
+    position: fixed;
+    height: 390px;
+    top: 240px;
+    text-align: center;
+}
+
+.caixa-usuario {
+    top: 100px;
+}
+
+.caixa-usuario p{
+    background-color: var(--corCampo);
+    margin: 10px;
+}
+
+#barra-lateral1 {
+    position: fixed;
+    left: 0;
+}
+
+#logo-escuro {
+    width: 60px;
+    gap: 20px;
+}
+
+.juncao-divs {
+    display: flex;
+}
+
+#foto-usuario {
+    height: 200px;
+    background-color: var(--corCampo);
+    text-align: center;
+    justify-self: center;
+    border-radius: 34px;
+    padding: 10px 15px;
+    align-items: flex-start;
+}
+
+#foto-usuario p{
+
+}
+
+.painel-esquerdo {
+    
+}

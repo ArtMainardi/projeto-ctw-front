@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#barra-lateral1 {
+    position: fixed;
+    left: 0;
+}
+
+#barra-lateral2 {
+    position: fixed;
+    right: 0;
+    transform: scale(-1);
+}

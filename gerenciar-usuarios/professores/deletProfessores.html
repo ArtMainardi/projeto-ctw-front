@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CTW+</title>
+</head>
+<body>
+    <header>
+        <li><a href="../professores/professores.html">Voltar</a></li>
+    </header>
+
+    <main id="error-main">
+        <p id="feedback-message"></p>
+    </main>
+
+    <main id="main" style="display: none;">
+        <h1>Deletar Professores Cadastrados</h1>
+        <div class="cad-container">
+            <input class="cad-input" id="id-professor" type="text" placeholder="ID do professor a ser deletado">
+        </div>
+        <button onclick="deletarProfessores()">Apagar</button>
+        <ul id="feedback"></ul>
+    </main>
+
+    <script src="./professoresCRUD.js"></script>
+    <script src="../../userVerification-script.js"></script>
+</body>
+</html>

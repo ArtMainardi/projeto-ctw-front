@@ -1,0 +1,1 @@
+/* Futura função para pegar as notícias pela API */
