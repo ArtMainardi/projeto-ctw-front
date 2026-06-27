@@ -15,11 +15,15 @@
     </main>
 
     <main id="main" style="display: none;">
-        <h1>Lista de Professores Cadastrados</h1>
-        <button onclick="listarProfessores()">Listar Professores</button>
-        <ul id="lista-professores"></ul>
+        <h1>Deletar Professores Cadastrados</h1>
+        <div class="cad-container">
+            <input class="cad-input" id="id-professor" type="text" placeholder="ID do professor a ser deletado">
+        </div>
+        <button onclick="deletarProfessores()">Apagar</button>
+        <ul id="feedback"></ul>
     </main>
+
     <script src="./professoresCRUD.js"></script>
-    <script src="../../userVerification-script.js"></script>
+    <script src=",,/../../userVerification-script.js"></script>
 </body>
 </html>

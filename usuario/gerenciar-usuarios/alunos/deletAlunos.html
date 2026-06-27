@@ -9,19 +9,21 @@
     <header>
         <li><a href="../alunos/alunos.html">Voltar</a></li>
     </header>
-    
+
     <main id="error-main">
         <p id="feedback-message"></p>
     </main>
 
     <main id="main" style="display: none;">
-        <h1>Pesquiar por ID Alunos Cadastrados</h1>
-        <input id="id-aluno" placeholder="ID do aluno">
-        <button onclick="procurarAlunos()">Procurar</button>
-        <ul id="aluno"></ul>
+        <h1>Deletar Alunos Cadastrados</h1>
+        <div class="cad-container">
+            <input class="cad-input" id="id-aluno" type="text" placeholder="ID do aluno a ser deletado">
+        </div>
+        <button onclick="deletarAlunos()">Apagar</button>
+        <ul id="feedback"></ul>
     </main>
 
     <script src="./alunosCRUD.js"></script>
-    <script src="../../userVerification-script.js"></script>
+    <script src=",,/../../userVerification-script.js"></script>
 </body>
 </html>
