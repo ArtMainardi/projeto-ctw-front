@@ -1,0 +1,89 @@
+.container-menu-lateral img{
+    position: fixed;
+}
+
+.menu-item{
+    visibility: hidden;
+    text-decoration: none;
+    text-align: center;
+    position: fixed;
+    right: 100px;
+}
+
+.menu-text{
+    visibility: hidden;
+    position: fixed;
+    color: white;
+    font-family: fontM;
+    right: 250px;
+    text-decoration: none;
+}
+
+#menu-lateral{
+    top: 0;
+    right: -300px;
+}
+
+#icone-mais{
+    top: 50px;
+    right: 80px;
+}
+
+#icone-cardapio{
+    top: 170px;
+}
+#text-cardapio{
+    top: 190px;
+}
+
+#icone-noticias{
+    top: 320px;
+}
+#text-noticias{
+    top: 340px;
+}
+
+#icone-rank{
+    top: 470px;
+}
+#text-rank{
+    top: 490px;
+}
+
+#icone-materia{
+    top: 620px;
+}
+#text-materia{
+    top: 640px;
+}
+
+#icone-config{
+    top: 770px;
+}
+#text-config{
+    top: 790px;
+}
+
+@keyframes pullMenu{
+    to{
+        transform: translateX(200px);
+    }
+}
+
+@keyframes pushMenu{
+    to{
+        transform: translateX(-200px);
+    }
+}
+
+@keyframes popIn{
+    from{
+        transform: scale(0.1%);
+    }
+}
+
+@keyframes popOut{
+    to{
+        transform: scale(0.1%);
+    }
+}

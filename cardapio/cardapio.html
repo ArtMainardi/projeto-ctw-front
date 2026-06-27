@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário - CTW+</title>
+    <title>Cardápio - CTW+</title>
+    <link rel="stylesheet" href="cardapio.css">
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="usuario.css">
     <link rel="stylesheet" href="/menuLateral/menuLateral.css">
+    <script src="/cardapio/cardapio.js" defer></script>
 </head>
 <body>
-
     <div class="bolas">
         <div class="bola" id="bola1"></div>
         <div class="bola" id="bola2"></div>
@@ -28,7 +28,7 @@
             <img src="..\images\mais-icon.svg" alt="mais icone" id="icone-mais"> 
         </a>
         <nav>
-            <a href="/cardapio/cardapio.html">
+            <a href="cardapio.html">
                 <h1 class="menu-text" id="text-cardapio">Cardápio</h1>
                 <img class="menu-item" id="icone-cardapio" src="..\images\cardapio-icon.svg" alt="icone cardápio">
             </a>
@@ -44,56 +44,27 @@
                 <h1 class="menu-text" id="text-materia">Material Online</h1>
                 <img class="menu-item" id="icone-materia" src="..\images\materia-icon.svg" alt="icone cardápio">
             </a>
-            <a href="usuario.html">
+            <a href="/usuario/usuario.html">
                 <h1 class="menu-text" id="text-config">Ferramentas</h1>
                 <img class="menu-item" id="icone-config" src="..\images\config-icon.svg" alt="icone cardápio">
             </a>
         </nav>
     </div>
 
-    <main id="error-main">
-        <p id="feedback-message"></p>
-    </main>
-
-    <main id="main" class="bolha" style="display: none;">
-        <div class="juncao-divs">
-            <div class="painel-esquerdo">
-                <div id="foto-usuario">
-                    <p>Foto do Usuário</p>
-                </div>
-
-                <div>
-                    <a href="levar-para-modo-escuro">
-                        <img id="logo-escuro" src="/images/modo-escuro.svg" alt="Ícone do modo escuro">
-                    </a>
-                </div>
-                
+    <main>
+        <div class="container-slider"> 
+            <button id="prev-button"><img src="/images/proximo.svg" alt="anterior"></button>
+            <div class="container-images">
+                <img src="/images/hoje.svg" alt="hoje" class="slider on">
+                <img src="/images/amanha.svg" alt="amanhã" class="slider">
+                <img src="/images/pos-amanha.svg" alt="pós-amanhã" class="slider">
             </div>
-            
-
-            <div class="caixa-usuario">
-                <h1 class="titulo">Perfil do Usuário</h1>
-                <p id="nome-usuario" class="campo"></p>
-                <p id="cpf-usuario" class="campo"></p>
-                <p id="email-usuario" class="campo"></p>
-                <p id="nascimento-usuario" class="campo"></p>
-                <p id="turma-usuario" class="campo"></p>         <!-- Mainardi ainda conectará com a coluna da API-->
-                <p id="classificacao-usuario" class="campo"></p> <!-- Mainardi ainda conectará com a coluna da API-->
-        
-                <button style="margin: 10px;" id="logout-button" onclick=logout() class="botao">Desconectar da conta</button>
-
-                <div class="menu">
-                    <a href="../gerenciar-usuarios/gerenciarUsuarios.html">
-                        <button type="button" class="botao">Gerenciar Usuários</button>
-                    </a>
-                    <br>
-                </div>
-            </div>
+            <button id="next-button"><img src="/images/proximo.svg" alt="próximo"></button>
         </div>
     </main>
 
-    <script src="./usuario-script.js"></script>
-    <script src="../userVerification-script.js"></script>
+    <script src="/index-script.js"></script>
+    <script src="/userVerification-script.js"></script>
     <script src="/menuLateral/menuLateral.js"></script>
 </body>
 </html>
