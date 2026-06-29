@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 450px;
+    justify-self: center;
+    position: fixed;
+    height: 420px;
+    top: 240px;
+    text-align: center;
+}
+
+.caixa-usuario {
+    top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-turma {
+    margin-top: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-botoes {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-botoes .botao {
+    width: 100%;
+    max-width: 200px;
+}
+
+#deletar {
+    margin-top: 10px;
+    background-color: var(--corBotaoOFF);
+}
+#deletar:hover {
+    background-color: #b93c3c;
+}

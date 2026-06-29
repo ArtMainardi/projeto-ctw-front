@@ -3,21 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto CTW+</title>
+    <title>Detalhes da Turma - CTW+</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./turmaDetalhes.css">
 </head>
 <body>
+
+    <div class="bolas">
+        <div class="bola" id="bola1"></div>
+        <div class="bola" id="bola2"></div>
+        <div class="bola" id="bola3"></div>
+        <div class="bola" id="bola4"></div>
+    </div>
+
+    <div class="container-barras-laterais"> 
+        <img src="../../images/barra-lateral.svg" alt="Efeito lateral esquerdo" id="barra-lateral1">
+        <img src="../../images/barra-lateral.svg" alt="Efeito lateral direito" id="barra-lateral2">
+    </div>
+
     <main id="error-main">
         <p id="feedback-message"></p>
     </main>
 
-    <main id="main" style="display: none;">
-        <li><a href="./turmas.html">Voltar</a></li>
-        <h1 id="nome">Turma [nome]</h1>
-        <p id="id" class="adm-feature" style="display: none;"><strong>ID:</strong> [ID]</p>
-        <p id="periodo"><strong>Período:</strong> [período]</p>
+    <main id="main" class="bolha" style="display: none;">
+        <div class="caixa-usuario">
+            <h1 id="nome" class="titulo">Turma [nome]</h1>
+            
+            <div class="info-turma">
+                <p id="id" class="campo adm-feature" style="display: none;"><strong>ID:</strong> [ID]</p>
+                <p id="periodo" class="campo"><strong>Período:</strong> [período]</p>
+                <p id="feedback" class="texto"></p>
+            </div>
 
-        <button id="deletar" class="adm-feature" style="display: none;">Deletar Turma</button>
-        <p id="feedback"></p>
+            <div class="menu-botoes">
+                <a href="./turmas.html">
+                    <button type="button" class="botao">Voltar</button>
+                </a>
+                
+                <button id="deletar" class="botao adm-feature" style="display: none">Deletar Turma</button>
+            </div>
+        </div>
     </main>
 
     <script src="./turmaDetalhes-script.js"></script>
