@@ -10,15 +10,13 @@ window.addEventListener("load", async function carregarTurmas(){
     if(turmas.length != 0){
         let listaGeradaMI = "";
         for(let cont = 0; cont < turmas.length; cont++){
-            console.log(turmas[cont].nome_turma)
             if(turmas[cont].nome_turma.toLowerCase().includes("mi")){
                 listaGeradaMI += `
-                    <p class="item-lista" data-id="${cont}" style="cursor: pointer;">
+                    <p class="item-lista" data-id="${turmas[cont].id_turma}" style="cursor: pointer;">
                         ${turmas[cont].nome_turma}  |  <strong>Período:</strong> ${turmas[cont].periodo.periodo}
                     </p>
                 `;
             }
-            console.log(listaGeradaMI)
         }
         listaGeradaMI !== "" ? listaMI.innerHTML = listaGeradaMI : listaMI.innerHTML = "Nenhuma turma desse curso encontrada!";
     } else {
@@ -28,7 +26,6 @@ window.addEventListener("load", async function carregarTurmas(){
 
     // Listener para abrir as páginas de detalhes:
     document.querySelectorAll(".item-lista").forEach((item) => {
-    console.log("SSSSS")
     item.addEventListener("click", () => {
         console.log("SSSS")
         window.location.href = `./turmaDetalhes.html?id=${item.dataset.id}`;
