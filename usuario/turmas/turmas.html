@@ -3,29 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto CTW+</title>
+    <title>Turmas - CTW+</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./turmas.css">
+    <link rel="stylesheet" href="../../menuLateral/menuLateral.css">
 </head>
 <body>
+
+    <div class="bolas">
+        <div class="bola" id="bola1"></div>
+        <div class="bola" id="bola2"></div>
+        <div class="bola" id="bola3"></div>
+        <div class="bola" id="bola4"></div>
+    </div>
+
+    <div class="container-barras-laterais"> 
+        <img src="../../images/barra-lateral.svg" alt="Efeito lateral da página principal" id="barra-lateral1">
+    </div>
+
+     <div class="container-menu-lateral">
+        <img src="../../images/menu-lateral.svg" alt="Menu lateral estilo barra" id="menu-lateral">
+        <a href="javascript:intercalarMenu()">
+            <img src="../../images/mais-icon.svg" alt="mais icone" id="icone-mais"> 
+        </a>
+        <nav>
+            <a href="../../cardapio/cardapio.html">
+                <h1 class="menu-text" id="text-cardapio">Cardápio</h1>
+                <img class="menu-item" id="icone-cardapio" src="../../images/cardapio-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="../../tela-inicial/telaInicial.html">
+                <h1 class="menu-text" id="text-noticias">Notícias</h1>
+                <img class="menu-item" id="icone-noticias" src="../../images/noticias-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-rank">Ranking</h1>
+                <img class="menu-item" id="icone-rank" src="../../images/ranking-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="">
+                <h1 class="menu-text" id="text-materia">Material Online</h1>
+                <img class="menu-item" id="icone-materia" src="../../images/materia-icon.svg" alt="icone cardápio">
+            </a>
+            <a href="../usuario.html">
+                <h1 class="menu-text" id="text-config">Ferramentas</h1>
+                <img class="menu-item" id="icone-config" src="../../images/config-icon.svg" alt="icone cardápio">
+            </a>
+        </nav>
+    </div>
+
     <main id="error-main">
         <p id="feedback-message"></p>
     </main>
 
-    <main id="main" style="display: none;">
-        <li><a href="../usuario.html">Voltar</a></li>
-        <h1>Turmas</h1>
-        <ul class="lista-cursos">
-            <a>=> Eletrotécnica
-                <ul class="lista"></ul>
-            </a>
-            <a>=> Informática para a Internet
-                <ul class="lista-mi"></ul>
-            </a>
-        </ul>
+    <main id="main" class="bolha" style="display: none;">
+        <div class="caixa-usuario">
+            <h1 class="titulo">Turmas</h1>
+            
+            <div class="lista-cursos">
+                <div class="curso-container">
+                    <h2 class="subtitulo">=> Eletrotécnica</h2>
+                    <div class="lista"></div>
+                </div>
+                
+                <div class="curso-container">
+                    <h2 class="subtitulo">=> Informática para a Internet</h2>
+                    <div class="lista-mi"></div>
+                </div>
+            </div>
 
-        <li class="adm-feature"><a href="./gerenciar-turmas/gerenciarTurmas.html">Gerenciar Turmas</a></li>
+            <div class="menu-botoes">
+                <a href="../usuario.html">
+                    <button type="button" class="botao">Voltar</button>
+                </a>
+                <div class="adm-feature" style="display: none; margin-top: 10px;">
+                    <a href="./gerenciar-turmas/gerenciarTurmas.html">
+                        <button type="button" class="botao">Gerenciar Turmas</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="./turmas-script.js"></script>
     <script src="../../userVerification-script.js"></script>
+    <script src="../../menuLateral/menuLateral.js"></script>
 </body>
 </html>
