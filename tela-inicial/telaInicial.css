@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 450px;
+    justify-self: center;
+    position: fixed;
+    height: 420px;
+    top: 240px;
+    text-align: center;
+}
+
+.caixa-usuario {
+    top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-noticias {
+    background-color: var(--corCampo);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+}
+
+.menu a {
+    width: 100%;
+    max-width: 220px;
+    text-decoration: none;
+}
+
+.menu .botao {
+    width: 100%;
+    margin: 0;
+}
+
+#barra-lateral1 {
+    position: fixed;
+    left: 0;
+}
